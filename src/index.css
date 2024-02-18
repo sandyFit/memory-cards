@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    background-color: aliceblue;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #932be2;
+    text-shadow: 2px 2px 4px #302f2f;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: 70%;
+    margin-top: 2rem;
+}
+
+.card {
+    border: 2px solid #b768f7;
+    border-radius: 10px;
+    background-color: #b768f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+    width: 12rem;
+    height: 12rem;
+    padding: 4rem;
+    cursor: pointer;
+    
+}
+
+.card {
+    perspective: 1000px;
+    width: 12rem; /* Adjust size as needed */
+    height: 12rem; /* Adjust size as needed */
+}
+
+.cardInner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.is-flipped .cardInner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+/* .front {
+    border: 2px solid #932be2;
+    background-color: #f6ebff;
+} */
+
+button {
+    background-color: #932be2;
+    color: aliceblue;
+    padding: 1.2rem 2.6rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 3px solid transparent;
+    margin-top: 2rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+button:hover {
+    border: 3px solid #932be2;
+    background-color: transparent;
+    color: #932be2;
+}
