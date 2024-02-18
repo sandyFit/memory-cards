@@ -6,9 +6,9 @@
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-    background-color: aliceblue;
+    background: linear-gradient(90deg, rgba(94,43,133,1) 25%, rgba(14,32,100,1) 50%, rgba(2,8,52,1) 75%);
     width: 100vw;
+    font-weight: 300;
 }
 
 main {
@@ -16,25 +16,44 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    width: 70%;
+    bottom: 1px solid black;
+    margin: 2rem auto;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: #932be2;
     text-shadow: 2px 2px 4px #302f2f;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-weight: 200;
 }
 
 .container {
+    display: flex;
+    align-items: center;
+}
+
+
+.section1 {
+    width: 75%;
+    background-color: rgb(255, 255, 255, 0.2);
+    padding: 2rem 0;
+    border-radius: 8px;
+
+}
+
+.cards-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    width: 70%;
-    margin-top: 2rem;
-}
 
+}
 .card {
     border: 2px solid #b768f7;
     border-radius: 10px;
@@ -43,48 +62,58 @@ h1 {
     justify-content: center;
     align-items: center;
     font-size: 5rem;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
     padding: 4rem;
     cursor: pointer;
+    animation: 5s hideCard linear;
     
 }
 
-.card {
-    perspective: 1000px;
-    width: 12rem; /* Adjust size as needed */
-    height: 12rem; /* Adjust size as needed */
+@keyframes hideCard {
+    0%, 70% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
 }
 
-.cardInner {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
+.emoji {
+    opacity: 0;
+    animation: 5s hideEmoji linear;
 }
 
-.card.is-flipped .cardInner {
-    transform: rotateY(180deg);
+@keyframes hideEmoji {
+    0%, 70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
-.front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
+.section2 {
+    background-color: rgb(255, 255, 255, 0.2);
+    border-radius: 0 8px 8px 0;
+    width: 250px;
+    height: 400px;
+    padding: 0 20px;
+    color: aliceblue;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
+    gap: 1rem;
 }
 
-.back {
-    transform: rotateY(180deg);
+.stats {
+    border: 1px solid white;
+    height: 105px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    padding: 8px 20px;
+    box-sizing: border-box;
 }
-
-/* .front {
-    border: 2px solid #932be2;
-    background-color: #f6ebff;
-} */
 
 button {
     background-color: #932be2;
